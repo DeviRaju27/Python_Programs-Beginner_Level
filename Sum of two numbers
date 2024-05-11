@@ -1,0 +1,4 @@
+def the_sum(a,b):   #Function definition with 2 parameters
+    return a + b
+    
+print(the_sum(2,3)) #Function Invocation, using 2 arguments
