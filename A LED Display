@@ -1,0 +1,27 @@
+row1in = [' #', '###', '###', '# #', '###', '###', '###', '###', '###', '###']
+row2in = [' #', '  #', '  #', '# #', '#  ', '#  ', '  #', '# #', '# #', '# #']
+row3in = [' #', '###', '###', '###', '###', '###', '  #', '###', '###', '# #']
+row4in = [' #', '#  ', '  #', '  #', '  #', '# #', '  #', '# #',  ' #', '# #']
+row5in = [' #', '###', '###', '  #', '###', '###', '  #', '###', '###', '###']
+
+row1out = ""
+row2out = ""
+row3out = ""
+row4out = ""
+row5out = ""
+
+num = "123"
+
+for i in num:
+    i = int(i)
+    row1out =  row1out + row1in[i-1] + ' '
+    row2out =  row2out + row2in[i-1] + ' '
+    row3out =  row3out + row3in[i-1] + ' '
+    row4out =  row4out + row4in[i-1] + ' '
+    row5out =  row5out + row5in[i-1] + ' '
+
+print(row1out)
+print(row2out)
+print(row3out)
+print(row4out)
+print(row5out)
