@@ -1,0 +1,21 @@
+text = input("enter one line of text to encrypt")
+shift = int(input("enter an integer number to use as a shift value(range 1..25"))
+cipher = ''
+
+
+for i in text:
+    if i== " " or i.isdigit():
+        cipher += i
+    elif i.islower():
+        code = ord(i)+ shift
+        if code > ord('z'):
+            code =  code - 26
+        cipher += chr(code)
+    else:
+        code = ord(i)+ shift
+        if code > ord('Z'):
+            code = code - 26
+        cipher += chr(code)
+    
+
+print(cipher)
