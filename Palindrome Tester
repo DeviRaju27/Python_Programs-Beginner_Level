@@ -1,0 +1,9 @@
+
+text = input("enter a text")
+
+text = text.replace(' ','').lower()
+
+if text == text[::-1]:
+    print("it's a palindrome")
+else:
+    print("It's not a palindrome") 
