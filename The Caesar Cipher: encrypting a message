@@ -1,0 +1,18 @@
+
+text = input("enter a message")
+
+cipher = ''
+
+for i in text:
+   
+    if not i.isalpha():
+        continue
+    i = i.upper()
+    code = ord(i) + 1
+    if code > ord('Z'):
+        code = ord('A')
+    cipher +=chr(code)
+    
+    
+print(cipher)
+    
