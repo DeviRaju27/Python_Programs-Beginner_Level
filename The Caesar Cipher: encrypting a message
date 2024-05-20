@@ -1,7 +1,9 @@
+# it accepts Latin letters only (note: the Romans used neither whitespaces nor digits)
+# convert the letter to upper-case & get the code of the letter and increment it by one. if it's greater than the Z code, change it to the A code
 
-text = input("enter a message")
+text = input("enter a message") 
 
-cipher = ''
+cipher = ''  
 
 for i in text:
    
