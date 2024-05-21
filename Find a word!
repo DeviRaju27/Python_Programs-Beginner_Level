@@ -1,0 +1,17 @@
+text = input("enter a text").lower()
+combo = input("enter the combination").lower()
+startindex = 0
+found = True
+
+for i in text:
+    
+    foundindex = combo.find(i, startindex)
+    
+    if foundindex > -1:
+        startindex += foundindex
+        found = True
+        
+    else:
+        found = False
+    
+print(found)
