@@ -1,0 +1,29 @@
+import os
+
+os.makedirs("tree/c/other_courses/cpp")
+os.makedirs("tree/c/other_courses/python")
+os.makedirs("tree/cpp")
+os.makedirs("tree/python")
+
+class DirectorySearch:
+    
+    def find(self, path, dir):
+        
+        try:
+            os.chdir(path)
+        except:
+            print("Directory not found")
+            return
+        
+        current_dir = os.getcwd()
+        
+        for i in os.listdir(current_dir):
+            if i == dir:
+                print(path+ "/" + i)
+            self.find( current_dir + "/" + i , dir)
+
+    
+directory = DirectorySearch()
+directory.find("./tree","python")
+
+            
