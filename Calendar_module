@@ -1,0 +1,28 @@
+""" 
+create the count_weekday_in_year method with the year and weekday parameters.
+The weekday parameter should be a value between 0-6, where 0 is Monday and 6 is Sunday. 
+The method should return the number of days as an integer.
+Create a class called MyCalendar that extends the Calendar class
+Use the monthdays2calendar method of the Calendar class.
+"""
+
+import calendar
+
+class MyCalendar(calendar.Calendar):
+    
+    def count_weekday_in_year(self, year, weekday):
+        self.weekday = weekday
+        self.counter = 0
+        
+        for x in range(1,13):
+            dates = self.monthdays2calendar(year, x)
+            for i in dates:
+                for j in i:
+                    if j[0] == 0:
+                        continue
+                    elif j[1] == self.weekday:
+                        self.counter += 1
+        return self.counter
+        
+calendar_obj = MyCalendar()
+print(calendar_obj.count_weekday_in_year(2019,0))
