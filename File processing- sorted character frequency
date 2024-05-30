@@ -1,0 +1,27 @@
+import os
+
+dictionary = { chr(x) : 0 for x in range(ord('a'), ord('z')+1) }
+
+try: 
+    filename = input("enter a file name")
+    stream = open(filename, "rt")
+    fread = stream.read()
+
+    for char in fread:
+        char = char.lower()
+        dictionary[char] += 1
+    
+    stream.close() 
+    
+    stream = open(filename + ".hst", "wt") #opening a new file to write
+    sorted_dict = dict(sorted(dictionary.items(), key = lambda x: x[0]))
+
+    for key in sorted_dict.keys():
+        if sorted_dict[key] > 0:
+            stream.write(key +  "->" + str(sorted_dict[key]) + "\n")
+            
+    stream.close()    
+     
+except IOError as err:
+    print(os.strerror(err.errno))
+
