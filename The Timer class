@@ -1,0 +1,51 @@
+def time_format(hr,mn,sc):
+    hr = f'0{hr}' if hr < 10 else hr
+    mn = f'0{mn}' if mn < 10 else mn
+    sc = f'0{sc}' if sc < 10 else sc
+    return f"{hr}:{mn}:{sc}"
+    
+class Timer:
+    def __init__( self, hour, mins, sec ):
+        self.hour = hour
+        self.mins = mins
+        self.sec = sec
+
+    def __str__(self):
+        return time_format(self.hour, self.mins, self.sec)
+
+    def next_second(self):
+        if self.hour + 1 > 23:
+            self.hour = 0
+        else:
+            self.hour += 1
+        if self.mins + 1 > 59:
+            self.mins = 0
+        else:
+            self.mins += 1
+        if self.sec + 1 > 59:
+            self.sec = 0
+        else:
+            self.sec += 1
+      
+
+    def prev_second(self):
+        if self.hour - 1 < 0:
+            self.hour = 23
+        else:
+            self.hour -= 1
+        if self.mins - 1  < 0:
+            self.mins = 59
+        else:
+            self.mins -= 1
+        if self.sec - 1 < 0:
+            self.sec = 59
+        else:
+            self.sec -= 1
+      
+
+timer = Timer(23, 59, 59)
+print(timer)
+timer.next_second()
+print(timer)
+timer.prev_second()
+print(timer)
